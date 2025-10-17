@@ -105,7 +105,7 @@ const gameBoard = (function () {
   };
 })();
 
-gameBoard.play();
+// gameBoard.play();
 
 // Create Player 1
 // Create Player 2
