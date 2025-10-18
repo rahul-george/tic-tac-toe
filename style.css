@@ -8,7 +8,7 @@ body {
   display: grid;
   margin: 0 1rem;
   grid-template-rows: 3rem 1fr 3rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: 510px;
   gap: 0.5rem;
   height: 100vh;
   grid-template-areas:
@@ -19,6 +19,10 @@ body {
 
 header {
   grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr 3rem;
+  grid-template-rows: 3rem;
+  align-items: center;
 }
 
 main {
@@ -26,7 +30,7 @@ main {
 
   display: grid;
   grid-template-rows: 2rem 0.8fr 3rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(1fr, 510px);
   grid-template-areas:
     "gameResult"
     "gameBoard"
@@ -58,10 +62,8 @@ button.gameCell {
 }
 
 .restart {
-  grid-area: restartGame;
   width: 3rem;
   height: 3rem;
-  margin-top: 1rem;
   appearance: none;
 }
 
