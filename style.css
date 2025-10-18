@@ -1,5 +1,64 @@
-.gameboard {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   display: grid;
-  grid-template-columns: repeat(3, 200px);
-  grid-template-rows: repeat(3, 200px);
+  margin: 0 1rem;
+  grid-template-rows: 3rem 1fr 3rem;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  height: 100vh;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+
+  display: grid;
+  grid-template-rows: 2rem 0.8fr 3rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "gameResult"
+    "gameBoard"
+    "restartGame";
+}
+
+footer {
+  grid-area: footer;
+}
+
+.gameResult {
+  grid-area: gameResult;
+}
+
+.gameboard {
+  grid-area: gameBoard;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(50px, 170px));
+  grid-template-rows: repeat(3, minmax(50px, 170px));
+}
+
+button.gameCell {
+  appearance: none;
+  background-color: white;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.restart {
+  grid-area: restartGame;
+  width: 510px;
+  margin-top: 1rem;
 }
