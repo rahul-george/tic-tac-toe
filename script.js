@@ -35,8 +35,8 @@ const gameBoard = (function () {
   let empty_spaces = new Set(["1", "2", "3", "4", "5", "6", "7", "8", "9"]);
 
   const win_conditions = [];
-  let player_1 = create_player("player_1", "x");
-  let player_2 = create_player("player_2", "o");
+  let player_1 = create_player("player_1", "./assets/x.svg");
+  let player_2 = create_player("player_2", "./assets/o.svg");
   let current_player = player_1;
 
   const add_win_consition_sets = function (arr) {
@@ -93,8 +93,8 @@ const gameBoard = (function () {
 
   const reset = function () {
     empty_spaces = new Set(["1", "2", "3", "4", "5", "6", "7", "8", "9"]);
-    player_1 = create_player("player_1", "x");
-    player_2 = create_player("player_2", "o");
+    player_1 = create_player("player_1", "./assets/x.svg");
+    player_2 = create_player("player_2", "./assets/o.svg");
     current_player = player_1;
   };
 
