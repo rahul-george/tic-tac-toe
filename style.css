@@ -23,18 +23,18 @@ header {
   grid-template-columns: 1fr 3rem;
   grid-template-rows: 3rem;
   align-items: center;
+  margin-top: 0.5rem;
 }
 
 main {
   grid-area: main;
 
   display: grid;
-  grid-template-rows: 2rem 0.8fr 3rem;
+  grid-template-rows: 2rem 0.8fr;
   grid-template-columns: minmax(1fr, 510px);
   grid-template-areas:
     "gameResult"
-    "gameBoard"
-    "restartGame";
+    "gameBoard";
 }
 
 footer {
@@ -59,12 +59,15 @@ button.gameCell {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid grey;
 }
 
 .restart {
   width: 3rem;
   height: 3rem;
   appearance: none;
+  border: transparent;
+  background-color: transparent;
 }
 
 .restart img {
