@@ -63,8 +63,15 @@ const gameBoard = (function () {
     return current_player;
   };
 
+  const is_cell_taken = function (choice) {
+    if (empty_spaces.has(choice)) {
+      return false;
+    }
+    return true;
+  };
+
   const record_player_choice = function (choice) {
-    if (!empty_spaces.has(choice)) {
+    if (is_cell_taken(choice)) {
       return;
     }
 
