@@ -108,6 +108,7 @@ const gameBoard = (function () {
   return {
     evaluate_winner,
     record_player_choice,
+    is_cell_taken,
     toggle_next_player,
     get_current_player,
     reset,
@@ -119,9 +120,18 @@ const displayController = (function (document, gameBoard) {
 
   const gameResult = document.querySelector(".gameResult");
 
+  const update_cell_marker = function (cell, marker) {
+    const img = document.createElement("img");
+    img.src = marker;
+    cell.appendChild(img);
+  };
+
   const playRound = function (event) {
+    if (game.is_cell_taken(event.target.dataset.choice)) {
+      return;
+    }
     game.record_player_choice(event.target.dataset.choice);
-    event.target.textContent = game.get_current_player().get_marker();
+    update_cell_marker(event.target, game.get_current_player().get_marker());
     const result = game.evaluate_winner();
     game.toggle_next_player();
     if (result.status === "win") {
