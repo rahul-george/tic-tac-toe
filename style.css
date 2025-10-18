@@ -59,6 +59,13 @@ button.gameCell {
 
 .restart {
   grid-area: restartGame;
-  width: 510px;
+  width: 3rem;
+  height: 3rem;
   margin-top: 1rem;
+  appearance: none;
+}
+
+.restart img {
+  width: 3rem;
+  height: 3rem;
 }
